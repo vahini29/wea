@@ -56,8 +56,8 @@ print('learning_rate: {}\ncrop_size: {}\ntrain_batch_size: {}\nval_batch_size: {
       train_batch_size, val_batch_size, lambda_loss))
 
 
-train_data_dir = './data/train/'
-val_data_dir = './data/test/'
+train_data_dir = '/content/drive/MyDrive/TransWeather/data/train/'
+val_data_dir = '/content/drive/MyDrive/TransWeather/data/test/'
 
 # --- Gpu device --- #
 device_ids = [Id for Id in range(torch.cuda.device_count())]
@@ -103,12 +103,12 @@ loss_network.eval()
 
 ### The following file should be placed inside the directory "./data/train/"
 
-labeled_name = 'allweather.txt'
+labeled_name = 'infiles.txt'
 
 ### The following files should be placed inside the directory "./data/test/"
 
 # val_filename = 'val_list_rain800.txt'
-val_filename1 = 'raindroptesta.txt'
+val_filename1 = 'testfiles.txt'
 # val_filename2 = 'test1.txt'
 
 # --- Load training data and validation/test data --- #
