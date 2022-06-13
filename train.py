@@ -88,7 +88,7 @@ for param in vgg_model.parameters():
 if os.path.exists('./{}/'.format(exp_name))==False:     
     os.mkdir('./{}/'.format(exp_name))  
 try:
-    net.load_state_dict(torch.load('./{}/best'.format(exp_name)))
+    net.load_state_dict(torch.load('/content/drive/MyDrive/TransWeather/weight_best/{}/best'.format(exp_name)))
     print('--- weight loaded ---')
 except:
     print('--- no weight loaded ---')
@@ -195,7 +195,7 @@ for epoch in range(epoch_start,num_epochs):
 
     # --- update the network weight --- #
     if val_psnr1 >= old_val_psnr1:
-        torch.save(net.state_dict(), './{}/best'.format(exp_name))
+        torch.save(net.state_dict(), '/content/drive/MyDrive/TransWeather/weight_best/{}/best'.format(exp_name))
         print('model saved')
         old_val_psnr1 = val_psnr1
 
