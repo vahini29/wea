@@ -30,7 +30,7 @@ if seed is not None:
     print('Seed:\t{}'.format(seed))
 
 # --- Set category-specific hyper-parameters  --- #
-val_data_dir = './data/test/'
+val_data_dir = '/content/drive/MyDrive/Transweather_image/'
 
 # --- Gpu device --- #
 device_ids = [Id for Id in range(torch.cuda.device_count())]
@@ -39,7 +39,7 @@ print(device)
 
 # --- Validation data loader --- #
 
-val_filename = 'test1.txt' ## This text file should contain all the names of the images and must be placed in ./data/test/ directory
+val_filename = 'image_names.txt' ## This text file should contain all the names of the images and must be placed in ./data/test/ directory
 
 val_data_loader = DataLoader(ValData(val_data_dir,val_filename), batch_size=val_batch_size, shuffle=False, num_workers=8)
 
@@ -52,7 +52,7 @@ net = nn.DataParallel(net, device_ids=device_ids)
 
 
 # --- Load the network weight --- #
-net.load_state_dict(torch.load('./{}/best'.format(exp_name)))
+net.load_state_dict(torch.load('/content/drive/MyDrive/TransWeather/weight_best/Transweather/best'.format(exp_name)))
 
 # --- Use the evaluation model in testing --- #
 net.eval()
