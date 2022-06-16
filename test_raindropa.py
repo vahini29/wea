@@ -52,7 +52,7 @@ net = nn.DataParallel(net, device_ids=device_ids)
 
 
 # --- Load the network weight --- #
-net.load_state_dict(torch.load('/content/drive/MyDrive/TransWeather/weight_best/Transweathe/best'.format(exp_name)))
+net.load_state_dict(torch.load('/content/drive/MyDrive/TransWeather/weight_best/Transweather/best'.format(exp_name)))
 
 # --- Use the evaluation model in testing --- #
 net.eval()
